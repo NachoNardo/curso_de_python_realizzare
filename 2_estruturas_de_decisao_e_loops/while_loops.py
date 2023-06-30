@@ -28,3 +28,13 @@ while i <= 20:
         continue
     print(i)
     i += 1
+
+# Podemos também utilizar a palavra else para executar um bloco de código
+# quando a condição for falsa
+
+i = 10
+
+while i > 50:
+    print("Loop while")
+else:
+    print("Loop não executou, condição era falsa")

@@ -1,49 +1,47 @@
-# Uma função é um bloco de código que pode ser executado quando chamado
-# Isso economiza a escrita de vários códigos e facilita seu trabalho
-# Sintaxe de criação -> def <nome da função>();
-#                           <bloco de código>
+# Escopo de variáveis basicamente significa o alcance e domínio
+# Que uma variável tem dentro de um código
+# Existe o escopo global e o escopo local
 
-def saudacao():
-    print("Olá")
+var = "global" # Esta variável tem escopo global dentro do código,
+               # pode ser referida em qualquer local
 
+print(var)
 
-saudacao()
+def var_global():
+    print(var)
 
+var_global()
 
-# Você pode passar parâmetros para que sua função execute taréfas
-# com dados que seja fornecidos pelo usuário
+# Uma variável local irá atuar somente em um bloco de código
+# ou em blocos de códigos derivados
 
-nome = input("Diga seu nome: ")
+def var_local():
+    x = 1
+    print(x)
 
+var_local()
 
-def despedida(nome_usuario):
-    print(f"Tchau {nome_usuario}!")
+# print(x) # -> Trará um erro
 
+# Quando a variável tiver um nome igual, ela ela irá respeitar seu escopo
 
-despedida(nome)
+varg = "Global"
 
+def global_local():
+    varg = 1
+    print(varg)
 
-# Você também pode retornar valores da sua função
-# Assim, é como se ela funcionasse como uma variável
+global_local()
 
-def soma(a, b):
-    return a + b
+print(varg)
 
+# Eu posso usar a palavra global para dizer que estou trabalhando com a variável global
 
-num_1 = int(input("Digite um número: "))
-num_2 = int(input("Digite outro número: "))
+def global_global():
+    global varg
+    varg = "Local"
+    print(varg)
 
-resultado = soma(num_1, num_2)
+global_global()
 
-print(f"A soma dos dois resultados é {resultado}")
-
-# Você pode definir um valor padrão para caso não seja inserido um parâmetro
-
-
-def saudacao_2(nome_usuario="pessoa"):
-    print(f"Olá {nome_usuario}")
-
-
-nome = input("Digite um nome: ")
-
-saudacao_2(nome)
+print(varg)
